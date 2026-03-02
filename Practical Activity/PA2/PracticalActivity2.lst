@@ -1,0 +1,970 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.33 build 59893 
+                                                                                               Mon Mar 02 08:42:16 2026
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 59893
+     1                           	processor	16F877A
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	text0,local,class=CODE,merge=1,delta=2
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+     7                           	psect	maintext,global,class=CODE,split=1,delta=2
+     8                           	psect	text1,local,class=CODE,merge=1,delta=2
+     9                           	psect	text2,local,class=CODE,merge=1,delta=2
+    10                           	psect	text3,local,class=CODE,merge=1,delta=2
+    11                           	psect	text4,local,class=CODE,merge=1,delta=2
+    12                           	dabs	1,0x7E,2
+    13  0000                     	;# 
+    14  0001                     	;# 
+    15  0002                     	;# 
+    16  0003                     	;# 
+    17  0004                     	;# 
+    18  0005                     	;# 
+    19  0006                     	;# 
+    20  0007                     	;# 
+    21  0008                     	;# 
+    22  0009                     	;# 
+    23  000A                     	;# 
+    24  000B                     	;# 
+    25  000C                     	;# 
+    26  000D                     	;# 
+    27  000E                     	;# 
+    28  000E                     	;# 
+    29  000F                     	;# 
+    30  0010                     	;# 
+    31  0011                     	;# 
+    32  0012                     	;# 
+    33  0013                     	;# 
+    34  0014                     	;# 
+    35  0015                     	;# 
+    36  0015                     	;# 
+    37  0016                     	;# 
+    38  0017                     	;# 
+    39  0018                     	;# 
+    40  0019                     	;# 
+    41  001A                     	;# 
+    42  001B                     	;# 
+    43  001B                     	;# 
+    44  001C                     	;# 
+    45  001D                     	;# 
+    46  001E                     	;# 
+    47  001F                     	;# 
+    48  0081                     	;# 
+    49  0085                     	;# 
+    50  0086                     	;# 
+    51  0087                     	;# 
+    52  0088                     	;# 
+    53  0089                     	;# 
+    54  008C                     	;# 
+    55  008D                     	;# 
+    56  008E                     	;# 
+    57  0091                     	;# 
+    58  0092                     	;# 
+    59  0093                     	;# 
+    60  0094                     	;# 
+    61  0098                     	;# 
+    62  0099                     	;# 
+    63  009C                     	;# 
+    64  009D                     	;# 
+    65  009E                     	;# 
+    66  009F                     	;# 
+    67  010C                     	;# 
+    68  010D                     	;# 
+    69  010E                     	;# 
+    70  010F                     	;# 
+    71  018C                     	;# 
+    72  018D                     	;# 
+    73  0007                     _PORTC	set	7
+    74  0008                     _PORTD	set	8
+    75  0030                     _RB0	set	48
+    76  0031                     _RB1	set	49
+    77  0032                     _RB2	set	50
+    78  0040                     _RD0	set	64
+    79  0081                     _OPTION_REG	set	129
+    80  0086                     _TRISB	set	134
+    81  0087                     _TRISC	set	135
+    82  0088                     _TRISD	set	136
+    83                           
+    84                           	psect	text0
+    85  0000                     __ptext0:	
+    86                           ; #config settings
+    87                           
+    88                           
+    89                           ;psect for function _delay
+    90  0000                     
+    91                           	psect	cinit
+    92  07FC                     start_initialization:	
+    93  07FC                     __initialization:	
+    94  07FC                     end_of_initialization:	
+    95                           ;End of C runtime variable initialization code
+    96                           
+    97  07FC                     __end_of__initialization:	
+    98  07FC  0183               	clrf	3
+    99  07FD  120A  118A  2F1A   	ljmp	_main	;jump to C main() function
+   100                           
+   101                           	psect	cstackCOMMON
+   102  0070                     __pcstackCOMMON:	
+   103  0070                     ?_delay:	
+   104  0070                     ?_instructCtrl:	
+   105                           ; 0 bytes @ 0x0
+   106                           
+   107  0070                     ?_initializeLCD:	
+   108                           ; 0 bytes @ 0x0
+   109                           
+   110  0070                     ?_dataCtrl:	
+   111                           ; 0 bytes @ 0x0
+   112                           
+   113  0070                     ?_main:	
+   114                           ; 0 bytes @ 0x0
+   115                           
+   116  0070                     delay@cnt:	
+   117                           ; 0 bytes @ 0x0
+   118                           
+   119                           
+   120                           ; 2 bytes @ 0x0
+   121  0070                     	ds	2
+   122  0072                     ??_delay:	
+   123  0072                     delay@i:	
+   124                           ; 0 bytes @ 0x2
+   125                           
+   126                           
+   127                           ; 2 bytes @ 0x2
+   128  0072                     	ds	2
+   129  0074                     delay@j:	
+   130                           
+   131                           ; 2 bytes @ 0x4
+   132  0074                     	ds	2
+   133  0076                     ??_instructCtrl:	
+   134  0076                     ??_dataCtrl:	
+   135                           ; 0 bytes @ 0x6
+   136                           
+   137  0076                     instructCtrl@inst:	
+   138                           ; 0 bytes @ 0x6
+   139                           
+   140  0076                     dataCtrl@data_in:	
+   141                           ; 1 bytes @ 0x6
+   142                           
+   143                           
+   144                           ; 1 bytes @ 0x6
+   145  0076                     	ds	1
+   146  0077                     ??_initializeLCD:	
+   147  0077                     ??_main:	
+   148                           ; 0 bytes @ 0x7
+   149                           
+   150                           
+   151                           ; 0 bytes @ 0x7
+   152  0077                     	ds	1
+   153  0078                     main@data:	
+   154                           
+   155                           ; 1 bytes @ 0x8
+   156  0078                     	ds	1
+   157  0079                     main@cnt:	
+   158                           
+   159                           ; 2 bytes @ 0x9
+   160  0079                     	ds	2
+   161                           
+   162                           	psect	maintext
+   163  071A                     __pmaintext:	
+   164 ;;
+   165 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   166 ;;
+   167 ;; *************** function _main *****************
+   168 ;; Defined at:
+   169 ;;		line 51 in file "Z:\CPE3201-Padas\PracticalActivities\PA2\PracticalActivity2.c"
+   170 ;; Parameters:    Size  Location     Type
+   171 ;;		None
+   172 ;; Auto vars:     Size  Location     Type
+   173 ;;  cnt             2    9[COMMON] int 
+   174 ;;  data            1    8[COMMON] unsigned char 
+   175 ;; Return value:  Size  Location     Type
+   176 ;;		None               void
+   177 ;; Registers used:
+   178 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1, pclath, cstack
+   179 ;; Tracked objects:
+   180 ;;		On entry : 17F/0
+   181 ;;		On exit  : 0/0
+   182 ;;		Unchanged: 0/0
+   183 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   184 ;;      Params:         0       0       0       0       0
+   185 ;;      Locals:         3       0       0       0       0
+   186 ;;      Temps:          1       0       0       0       0
+   187 ;;      Totals:         4       0       0       0       0
+   188 ;;Total ram usage:        4 bytes
+   189 ;; Hardware stack levels required when called:    3
+   190 ;; This function calls:
+   191 ;;		_dataCtrl
+   192 ;;		_delay
+   193 ;;		_initializeLCD
+   194 ;;		_instructCtrl
+   195 ;; This function is called by:
+   196 ;;		Startup code after reset
+   197 ;; This function uses a non-reentrant model
+   198 ;;
+   199                           
+   200                           
+   201                           ;psect for function _main
+   202  071A                     _main:	
+   203                           
+   204                           ;PracticalActivity2.c: 52: OPTION_REG = 0xC0;
+   205                           
+   206                           ;incstack = 0
+   207                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
+   208  071A  30C0               	movlw	192
+   209  071B  1683               	bsf	3,5	;RP0=1, select bank1
+   210  071C  1303               	bcf	3,6	;RP1=0, select bank1
+   211  071D  0081               	movwf	1	;volatile
+   212                           
+   213                           ;PracticalActivity2.c: 53: TRISB = 0x00;
+   214  071E  0186               	clrf	6	;volatile
+   215                           
+   216                           ;PracticalActivity2.c: 54: TRISC = 0x00;
+   217  071F  0187               	clrf	7	;volatile
+   218                           
+   219                           ;PracticalActivity2.c: 55: TRISD = 0xF1;
+   220  0720  30F1               	movlw	241
+   221  0721  0088               	movwf	8	;volatile
+   222                           
+   223                           ;PracticalActivity2.c: 57: int cnt = 0;
+   224  0722  01F9               	clrf	main@cnt
+   225  0723  01FA               	clrf	main@cnt+1
+   226                           
+   227                           ;PracticalActivity2.c: 59: unsigned char data;
+   228                           ;PracticalActivity2.c: 61: initializeLCD();
+   229  0724  120A  118A  26C5  120A  118A  	fcall	_initializeLCD
+   230  0729                     l574:	
+   231                           ;PracticalActivity2.c: 63: while(1) {
+   232                           
+   233                           
+   234                           ;PracticalActivity2.c: 64: if(RD0 == 1) {
+   235  0729  1283               	bcf	3,5	;RP0=0, select bank0
+   236  072A  1303               	bcf	3,6	;RP1=0, select bank0
+   237  072B  1C08               	btfss	8,0	;volatile
+   238  072C  2F29               	goto	l574
+   239                           
+   240                           ;PracticalActivity2.c: 65: data = PORTD & 0xF0;
+   241  072D  0808               	movf	8,w	;volatile
+   242  072E  39F0               	andlw	240
+   243  072F  00F7               	movwf	??_main
+   244  0730  0877               	movf	??_main,w
+   245  0731  00F8               	movwf	main@data
+   246                           
+   247                           ;PracticalActivity2.c: 66: cnt++;
+   248  0732  3001               	movlw	1
+   249  0733  07F9               	addwf	main@cnt,f
+   250  0734  1803               	skipnc
+   251  0735  0AFA               	incf	main@cnt+1,f
+   252  0736  3000               	movlw	0
+   253  0737  07FA               	addwf	main@cnt+1,f
+   254                           
+   255                           ;PracticalActivity2.c: 68: switch(data){
+   256  0738  2F8D               	goto	l606
+   257  0739                     l580:	
+   258                           ;PracticalActivity2.c: 69: case 0x00: dataCtrl('1');
+   259                           
+   260  0739  3031               	movlw	49
+   261  073A  120A  118A  269F  120A  118A  	fcall	_dataCtrl
+   262                           
+   263                           ;PracticalActivity2.c: 70: break;
+   264  073F  2FB3               	goto	l608
+   265  0740                     l582:	
+   266                           ;PracticalActivity2.c: 72: case 0x10: dataCtrl('2');
+   267                           
+   268  0740  3032               	movlw	50
+   269  0741  120A  118A  269F  120A  118A  	fcall	_dataCtrl
+   270                           
+   271                           ;PracticalActivity2.c: 73: break;
+   272  0746  2FB3               	goto	l608
+   273  0747                     l584:	
+   274                           ;PracticalActivity2.c: 75: case 0x20: dataCtrl('3');
+   275                           
+   276  0747  3033               	movlw	51
+   277  0748  120A  118A  269F  120A  118A  	fcall	_dataCtrl
+   278                           
+   279                           ;PracticalActivity2.c: 76: break;
+   280  074D  2FB3               	goto	l608
+   281  074E                     l586:	
+   282                           ;PracticalActivity2.c: 78: case 0x40: dataCtrl('4');
+   283                           
+   284  074E  3034               	movlw	52
+   285  074F  120A  118A  269F  120A  118A  	fcall	_dataCtrl
+   286                           
+   287                           ;PracticalActivity2.c: 79: break;
+   288  0754  2FB3               	goto	l608
+   289  0755                     l588:	
+   290                           ;PracticalActivity2.c: 81: case 0x50: dataCtrl('5');
+   291                           
+   292  0755  3035               	movlw	53
+   293  0756  120A  118A  269F  120A  118A  	fcall	_dataCtrl
+   294                           
+   295                           ;PracticalActivity2.c: 82: break;
+   296  075B  2FB3               	goto	l608
+   297  075C                     l590:	
+   298                           ;PracticalActivity2.c: 84: case 0x60: dataCtrl('6');
+   299                           
+   300  075C  3036               	movlw	54
+   301  075D  120A  118A  269F  120A  118A  	fcall	_dataCtrl
+   302                           
+   303                           ;PracticalActivity2.c: 85: break;
+   304  0762  2FB3               	goto	l608
+   305  0763                     l592:	
+   306                           ;PracticalActivity2.c: 87: case 0x80: dataCtrl('7');
+   307                           
+   308  0763  3037               	movlw	55
+   309  0764  120A  118A  269F  120A  118A  	fcall	_dataCtrl
+   310                           
+   311                           ;PracticalActivity2.c: 88: break;
+   312  0769  2FB3               	goto	l608
+   313  076A                     l594:	
+   314                           ;PracticalActivity2.c: 90: case 0x90: dataCtrl('8');
+   315                           
+   316  076A  3038               	movlw	56
+   317  076B  120A  118A  269F  120A  118A  	fcall	_dataCtrl
+   318                           
+   319                           ;PracticalActivity2.c: 91: break;
+   320  0770  2FB3               	goto	l608
+   321  0771                     l596:	
+   322                           ;PracticalActivity2.c: 93: case 0xA0: dataCtrl('9');
+   323                           
+   324  0771  3039               	movlw	57
+   325  0772  120A  118A  269F  120A  118A  	fcall	_dataCtrl
+   326                           
+   327                           ;PracticalActivity2.c: 94: break;
+   328  0777  2FB3               	goto	l608
+   329  0778                     l598:	
+   330                           ;PracticalActivity2.c: 96: case 0xD0: dataCtrl('0');
+   331                           
+   332  0778  3030               	movlw	48
+   333  0779  120A  118A  269F  120A  118A  	fcall	_dataCtrl
+   334                           
+   335                           ;PracticalActivity2.c: 97: break;
+   336  077E  2FB3               	goto	l608
+   337  077F                     l600:	
+   338                           ;PracticalActivity2.c: 99: case 0xC0: dataCtrl('*');
+   339                           
+   340  077F  302A               	movlw	42
+   341  0780  120A  118A  269F  120A  118A  	fcall	_dataCtrl
+   342                           
+   343                           ;PracticalActivity2.c: 100: break;
+   344  0785  2FB3               	goto	l608
+   345  0786                     l602:	
+   346                           ;PracticalActivity2.c: 102: case 0xE0: dataCtrl('#');
+   347                           
+   348  0786  3023               	movlw	35
+   349  0787  120A  118A  269F  120A  118A  	fcall	_dataCtrl
+   350                           
+   351                           ;PracticalActivity2.c: 104: }
+   352                           
+   353                           ;PracticalActivity2.c: 103: break;
+   354  078C  2FB3               	goto	l608
+   355  078D                     l606:	
+   356  078D  0878               	movf	main@data,w
+   357                           
+   358                           ; Switch size 1, requested type "space"
+   359                           ; Number of cases is 12, Range of values is 0 to 224
+   360                           ; switch strategies available:
+   361                           ; Name         Instructions Cycles
+   362                           ; simple_byte           37    19 (average)
+   363                           ; jumptable            260     6 (fixed)
+   364                           ;	Chosen strategy is simple_byte
+   365  078E  3A00               	xorlw	0	; case 0
+   366  078F  1903               	skipnz
+   367  0790  2F39               	goto	l580
+   368  0791  3A10               	xorlw	16	; case 16
+   369  0792  1903               	skipnz
+   370  0793  2F40               	goto	l582
+   371  0794  3A30               	xorlw	48	; case 32
+   372  0795  1903               	skipnz
+   373  0796  2F47               	goto	l584
+   374  0797  3A60               	xorlw	96	; case 64
+   375  0798  1903               	skipnz
+   376  0799  2F4E               	goto	l586
+   377  079A  3A10               	xorlw	16	; case 80
+   378  079B  1903               	skipnz
+   379  079C  2F55               	goto	l588
+   380  079D  3A30               	xorlw	48	; case 96
+   381  079E  1903               	skipnz
+   382  079F  2F5C               	goto	l590
+   383  07A0  3AE0               	xorlw	224	; case 128
+   384  07A1  1903               	skipnz
+   385  07A2  2F63               	goto	l592
+   386  07A3  3A10               	xorlw	16	; case 144
+   387  07A4  1903               	skipnz
+   388  07A5  2F6A               	goto	l594
+   389  07A6  3A30               	xorlw	48	; case 160
+   390  07A7  1903               	skipnz
+   391  07A8  2F71               	goto	l596
+   392  07A9  3A60               	xorlw	96	; case 192
+   393  07AA  1903               	skipnz
+   394  07AB  2F7F               	goto	l600
+   395  07AC  3A10               	xorlw	16	; case 208
+   396  07AD  1903               	skipnz
+   397  07AE  2F78               	goto	l598
+   398  07AF  3A30               	xorlw	48	; case 224
+   399  07B0  1903               	skipnz
+   400  07B1  2F86               	goto	l602
+   401  07B2  2FB3               	goto	l608
+   402  07B3                     l608:	
+   403                           
+   404                           ;PracticalActivity2.c: 106: if(cnt == 20) {
+   405  07B3  3014               	movlw	20
+   406  07B4  0679               	xorwf	main@cnt,w
+   407  07B5  047A               	iorwf	main@cnt+1,w
+   408  07B6  1D03               	skipz
+   409  07B7  2FC7               	goto	l612
+   410                           
+   411                           ;PracticalActivity2.c: 107: instructCtrl(0xC0);
+   412  07B8  30C0               	movlw	192
+   413  07B9  120A  118A  26B2  120A  118A  	fcall	_instructCtrl
+   414                           
+   415                           ;PracticalActivity2.c: 108: delay(10);
+   416  07BE  300A               	movlw	10
+   417  07BF  00F0               	movwf	delay@cnt
+   418  07C0  3000               	movlw	0
+   419  07C1  00F1               	movwf	delay@cnt+1
+   420  07C2  120A  118A  26EB  120A  118A  	fcall	_delay
+   421  07C7                     l612:	
+   422                           
+   423                           ;PracticalActivity2.c: 109: }
+   424                           ;PracticalActivity2.c: 111: if(cnt == 40) {
+   425  07C7  3028               	movlw	40
+   426  07C8  0679               	xorwf	main@cnt,w
+   427  07C9  047A               	iorwf	main@cnt+1,w
+   428  07CA  1D03               	skipz
+   429  07CB  2FDB               	goto	l616
+   430                           
+   431                           ;PracticalActivity2.c: 112: instructCtrl(0x94);
+   432  07CC  3094               	movlw	148
+   433  07CD  120A  118A  26B2  120A  118A  	fcall	_instructCtrl
+   434                           
+   435                           ;PracticalActivity2.c: 113: delay(10);
+   436  07D2  300A               	movlw	10
+   437  07D3  00F0               	movwf	delay@cnt
+   438  07D4  3000               	movlw	0
+   439  07D5  00F1               	movwf	delay@cnt+1
+   440  07D6  120A  118A  26EB  120A  118A  	fcall	_delay
+   441  07DB                     l616:	
+   442                           
+   443                           ;PracticalActivity2.c: 114: }
+   444                           ;PracticalActivity2.c: 116: if(cnt == 60) {
+   445  07DB  303C               	movlw	60
+   446  07DC  0679               	xorwf	main@cnt,w
+   447  07DD  047A               	iorwf	main@cnt+1,w
+   448  07DE  1D03               	skipz
+   449  07DF  2FEF               	goto	l620
+   450                           
+   451                           ;PracticalActivity2.c: 117: instructCtrl(0xD4);
+   452  07E0  30D4               	movlw	212
+   453  07E1  120A  118A  26B2  120A  118A  	fcall	_instructCtrl
+   454                           
+   455                           ;PracticalActivity2.c: 118: delay(10);
+   456  07E6  300A               	movlw	10
+   457  07E7  00F0               	movwf	delay@cnt
+   458  07E8  3000               	movlw	0
+   459  07E9  00F1               	movwf	delay@cnt+1
+   460  07EA  120A  118A  26EB  120A  118A  	fcall	_delay
+   461  07EF                     l620:	
+   462                           
+   463                           ;PracticalActivity2.c: 119: }
+   464                           ;PracticalActivity2.c: 121: if(cnt == 80) {
+   465  07EF  3050               	movlw	80
+   466  07F0  0679               	xorwf	main@cnt,w
+   467  07F1  047A               	iorwf	main@cnt+1,w
+   468  07F2  1D03               	skipz
+   469  07F3  2F29               	goto	l574
+   470                           
+   471                           ;PracticalActivity2.c: 122: initializeLCD();
+   472  07F4  120A  118A  26C5  120A  118A  	fcall	_initializeLCD
+   473                           
+   474                           ;PracticalActivity2.c: 123: cnt = 0;
+   475  07F9  01F9               	clrf	main@cnt
+   476  07FA  01FA               	clrf	main@cnt+1
+   477  07FB  2F29               	goto	l574
+   478  07FC                     __end_of_main:	
+   479                           
+   480                           	psect	text1
+   481  06C5                     __ptext1:	
+   482 ;; *************** function _initializeLCD *****************
+   483 ;; Defined at:
+   484 ;;		line 30 in file "Z:\CPE3201-Padas\PracticalActivities\PA2\PracticalActivity2.c"
+   485 ;; Parameters:    Size  Location     Type
+   486 ;;		None
+   487 ;; Auto vars:     Size  Location     Type
+   488 ;;		None
+   489 ;; Return value:  Size  Location     Type
+   490 ;;		None               void
+   491 ;; Registers used:
+   492 ;;		wreg, status,2, status,0, btemp+1, pclath, cstack
+   493 ;; Tracked objects:
+   494 ;;		On entry : 0/0
+   495 ;;		On exit  : 0/0
+   496 ;;		Unchanged: 0/0
+   497 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   498 ;;      Params:         0       0       0       0       0
+   499 ;;      Locals:         0       0       0       0       0
+   500 ;;      Temps:          0       0       0       0       0
+   501 ;;      Totals:         0       0       0       0       0
+   502 ;;Total ram usage:        0 bytes
+   503 ;; Hardware stack levels used:    1
+   504 ;; Hardware stack levels required when called:    2
+   505 ;; This function calls:
+   506 ;;		_delay
+   507 ;;		_instructCtrl
+   508 ;; This function is called by:
+   509 ;;		_main
+   510 ;; This function uses a non-reentrant model
+   511 ;;
+   512                           
+   513                           
+   514                           ;psect for function _initializeLCD
+   515  06C5                     _initializeLCD:	
+   516                           
+   517                           ;PracticalActivity2.c: 31: instructCtrl(0x38);
+   518                           
+   519                           ;incstack = 0
+   520                           ; Regs used in _initializeLCD: [wreg+status,2+status,0+btemp+1+pclath+cstack]
+   521  06C5  3038               	movlw	56
+   522  06C6  120A  118A  26B2  120A  118A  	fcall	_instructCtrl
+   523                           
+   524                           ;PracticalActivity2.c: 33: delay(10);
+   525  06CB  300A               	movlw	10
+   526  06CC  00F0               	movwf	delay@cnt
+   527  06CD  3000               	movlw	0
+   528  06CE  00F1               	movwf	delay@cnt+1
+   529  06CF  120A  118A  26EB  120A  118A  	fcall	_delay
+   530                           
+   531                           ;PracticalActivity2.c: 35: instructCtrl(0x0C);
+   532  06D4  300C               	movlw	12
+   533  06D5  120A  118A  26B2  120A  118A  	fcall	_instructCtrl
+   534                           
+   535                           ;PracticalActivity2.c: 36: instructCtrl(0x01);
+   536  06DA  3001               	movlw	1
+   537  06DB  120A  118A  26B2  120A  118A  	fcall	_instructCtrl
+   538                           
+   539                           ;PracticalActivity2.c: 37: instructCtrl(0x06);
+   540  06E0  3006               	movlw	6
+   541  06E1  120A  118A  26B2  120A  118A  	fcall	_instructCtrl
+   542                           
+   543                           ;PracticalActivity2.c: 38: instructCtrl(0x0F);
+   544  06E6  300F               	movlw	15
+   545  06E7  120A  118A  26B2   	fcall	_instructCtrl
+   546  06EA  0008               	return
+   547  06EB                     __end_of_initializeLCD:	
+   548                           
+   549                           	psect	text2
+   550  06B2                     __ptext2:	
+   551 ;; *************** function _instructCtrl *****************
+   552 ;; Defined at:
+   553 ;;		line 20 in file "Z:\CPE3201-Padas\PracticalActivities\PA2\PracticalActivity2.c"
+   554 ;; Parameters:    Size  Location     Type
+   555 ;;  inst            1    wreg     unsigned char 
+   556 ;; Auto vars:     Size  Location     Type
+   557 ;;  inst            1    6[COMMON] unsigned char 
+   558 ;; Return value:  Size  Location     Type
+   559 ;;		None               void
+   560 ;; Registers used:
+   561 ;;		wreg, status,2, status,0, btemp+1, pclath, cstack
+   562 ;; Tracked objects:
+   563 ;;		On entry : 0/0
+   564 ;;		On exit  : 0/0
+   565 ;;		Unchanged: 0/0
+   566 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   567 ;;      Params:         0       0       0       0       0
+   568 ;;      Locals:         1       0       0       0       0
+   569 ;;      Temps:          0       0       0       0       0
+   570 ;;      Totals:         1       0       0       0       0
+   571 ;;Total ram usage:        1 bytes
+   572 ;; Hardware stack levels used:    1
+   573 ;; Hardware stack levels required when called:    1
+   574 ;; This function calls:
+   575 ;;		_delay
+   576 ;; This function is called by:
+   577 ;;		_initializeLCD
+   578 ;;		_main
+   579 ;; This function uses a non-reentrant model
+   580 ;;
+   581                           
+   582                           
+   583                           ;psect for function _instructCtrl
+   584  06B2                     _instructCtrl:	
+   585                           
+   586                           ;incstack = 0
+   587                           ; Regs used in _instructCtrl: [wreg+status,2+status,0+btemp+1+pclath+cstack]
+   588                           ;instructCtrl@inst stored from wreg
+   589  06B2  00F6               	movwf	instructCtrl@inst
+   590                           
+   591                           ;PracticalActivity2.c: 21: PORTC = inst;
+   592  06B3  0876               	movf	instructCtrl@inst,w
+   593  06B4  1283               	bcf	3,5	;RP0=0, select bank0
+   594  06B5  1303               	bcf	3,6	;RP1=0, select bank0
+   595  06B6  0087               	movwf	7	;volatile
+   596                           
+   597                           ;PracticalActivity2.c: 22: RB0 = 0;
+   598  06B7  1006               	bcf	6,0	;volatile
+   599                           
+   600                           ;PracticalActivity2.c: 23: RB2 = 0;
+   601  06B8  1106               	bcf	6,2	;volatile
+   602                           
+   603                           ;PracticalActivity2.c: 24: RB1 = 1;
+   604  06B9  1486               	bsf	6,1	;volatile
+   605                           
+   606                           ;PracticalActivity2.c: 25: delay(1);
+   607  06BA  3001               	movlw	1
+   608  06BB  00F0               	movwf	delay@cnt
+   609  06BC  3000               	movlw	0
+   610  06BD  00F1               	movwf	delay@cnt+1
+   611  06BE  120A  118A  26EB   	fcall	_delay
+   612                           
+   613                           ;PracticalActivity2.c: 27: RB1 = 0;
+   614  06C1  1283               	bcf	3,5	;RP0=0, select bank0
+   615  06C2  1303               	bcf	3,6	;RP1=0, select bank0
+   616  06C3  1086               	bcf	6,1	;volatile
+   617  06C4  0008               	return
+   618  06C5                     __end_of_instructCtrl:	
+   619                           
+   620                           	psect	text3
+   621  069F                     __ptext3:	
+   622 ;; *************** function _dataCtrl *****************
+   623 ;; Defined at:
+   624 ;;		line 41 in file "Z:\CPE3201-Padas\PracticalActivities\PA2\PracticalActivity2.c"
+   625 ;; Parameters:    Size  Location     Type
+   626 ;;  data_in         1    wreg     unsigned char 
+   627 ;; Auto vars:     Size  Location     Type
+   628 ;;  data_in         1    6[COMMON] unsigned char 
+   629 ;; Return value:  Size  Location     Type
+   630 ;;		None               void
+   631 ;; Registers used:
+   632 ;;		wreg, status,2, status,0, btemp+1, pclath, cstack
+   633 ;; Tracked objects:
+   634 ;;		On entry : 0/0
+   635 ;;		On exit  : 0/0
+   636 ;;		Unchanged: 0/0
+   637 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   638 ;;      Params:         0       0       0       0       0
+   639 ;;      Locals:         1       0       0       0       0
+   640 ;;      Temps:          0       0       0       0       0
+   641 ;;      Totals:         1       0       0       0       0
+   642 ;;Total ram usage:        1 bytes
+   643 ;; Hardware stack levels used:    1
+   644 ;; Hardware stack levels required when called:    1
+   645 ;; This function calls:
+   646 ;;		_delay
+   647 ;; This function is called by:
+   648 ;;		_main
+   649 ;; This function uses a non-reentrant model
+   650 ;;
+   651                           
+   652                           
+   653                           ;psect for function _dataCtrl
+   654  069F                     _dataCtrl:	
+   655                           
+   656                           ;incstack = 0
+   657                           ; Regs used in _dataCtrl: [wreg+status,2+status,0+btemp+1+pclath+cstack]
+   658                           ;dataCtrl@data_in stored from wreg
+   659  069F  00F6               	movwf	dataCtrl@data_in
+   660                           
+   661                           ;PracticalActivity2.c: 42: PORTC = data_in;
+   662  06A0  0876               	movf	dataCtrl@data_in,w
+   663  06A1  1283               	bcf	3,5	;RP0=0, select bank0
+   664  06A2  1303               	bcf	3,6	;RP1=0, select bank0
+   665  06A3  0087               	movwf	7	;volatile
+   666                           
+   667                           ;PracticalActivity2.c: 43: RB0 = 1;
+   668  06A4  1406               	bsf	6,0	;volatile
+   669                           
+   670                           ;PracticalActivity2.c: 44: RB2 = 0;
+   671  06A5  1106               	bcf	6,2	;volatile
+   672                           
+   673                           ;PracticalActivity2.c: 45: RB1 = 1;
+   674  06A6  1486               	bsf	6,1	;volatile
+   675                           
+   676                           ;PracticalActivity2.c: 46: delay(5);
+   677  06A7  3005               	movlw	5
+   678  06A8  00F0               	movwf	delay@cnt
+   679  06A9  3000               	movlw	0
+   680  06AA  00F1               	movwf	delay@cnt+1
+   681  06AB  120A  118A  26EB   	fcall	_delay
+   682                           
+   683                           ;PracticalActivity2.c: 48: RB1 = 0;
+   684  06AE  1283               	bcf	3,5	;RP0=0, select bank0
+   685  06AF  1303               	bcf	3,6	;RP1=0, select bank0
+   686  06B0  1086               	bcf	6,1	;volatile
+   687  06B1  0008               	return
+   688  06B2                     __end_of_dataCtrl:	
+   689                           
+   690                           	psect	text4
+   691  06EB                     __ptext4:	
+   692 ;; *************** function _delay *****************
+   693 ;; Defined at:
+   694 ;;		line 14 in file "Z:\CPE3201-Padas\PracticalActivities\PA2\PracticalActivity2.c"
+   695 ;; Parameters:    Size  Location     Type
+   696 ;;  cnt             2    0[COMMON] int 
+   697 ;; Auto vars:     Size  Location     Type
+   698 ;;  j               2    4[COMMON] int 
+   699 ;;  i               2    2[COMMON] int 
+   700 ;; Return value:  Size  Location     Type
+   701 ;;		None               void
+   702 ;; Registers used:
+   703 ;;		wreg, status,2, status,0, btemp+1
+   704 ;; Tracked objects:
+   705 ;;		On entry : 0/0
+   706 ;;		On exit  : 0/0
+   707 ;;		Unchanged: 0/0
+   708 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   709 ;;      Params:         2       0       0       0       0
+   710 ;;      Locals:         4       0       0       0       0
+   711 ;;      Temps:          0       0       0       0       0
+   712 ;;      Totals:         6       0       0       0       0
+   713 ;;Total ram usage:        6 bytes
+   714 ;; Hardware stack levels used:    1
+   715 ;; This function calls:
+   716 ;;		Nothing
+   717 ;; This function is called by:
+   718 ;;		_instructCtrl
+   719 ;;		_initializeLCD
+   720 ;;		_dataCtrl
+   721 ;;		_main
+   722 ;; This function uses a non-reentrant model
+   723 ;;
+   724                           
+   725                           
+   726                           ;psect for function _delay
+   727  06EB                     _delay:	
+   728                           
+   729                           ;PracticalActivity2.c: 15: int i, j;
+   730                           ;PracticalActivity2.c: 16: for(i = cnt; i != 0; i--)
+   731                           
+   732                           ;incstack = 0
+   733                           ; Regs used in _delay: [wreg+status,2+status,0+btemp+1]
+   734  06EB  0871               	movf	delay@cnt+1,w
+   735  06EC  01F3               	clrf	delay@i+1
+   736  06ED  07F3               	addwf	delay@i+1,f
+   737  06EE  0870               	movf	delay@cnt,w
+   738  06EF  01F2               	clrf	delay@i
+   739  06F0  07F2               	addwf	delay@i,f
+   740  06F1                     L1:	
+   741  06F1  0873               	movf	delay@i+1,w
+   742  06F2  0472               	iorwf	delay@i,w
+   743  06F3  1903               	btfsc	3,2
+   744  06F4  0008               	return
+   745                           
+   746                           ;PracticalActivity2.c: 17: for(j = 0; j < 1000; j++);
+   747  06F5  01F4               	clrf	delay@j
+   748  06F6  01F5               	clrf	delay@j+1
+   749  06F7  0875               	movf	delay@j+1,w
+   750  06F8  3A80               	xorlw	128
+   751  06F9  00FF               	movwf	127
+   752  06FA  3083               	movlw	131
+   753  06FB  027F               	subwf	127,w
+   754  06FC  1D03               	skipz
+   755  06FD  2F00               	goto	u25
+   756  06FE  30E8               	movlw	232
+   757  06FF  0274               	subwf	delay@j,w
+   758  0700                     u25:	
+   759  0700  1803               	btfsc	3,0
+   760  0701  2F13               	goto	l534
+   761  0702                     l530:	
+   762  0702  3001               	movlw	1
+   763  0703  07F4               	addwf	delay@j,f
+   764  0704  1803               	skipnc
+   765  0705  0AF5               	incf	delay@j+1,f
+   766  0706  3000               	movlw	0
+   767  0707  07F5               	addwf	delay@j+1,f
+   768  0708  0875               	movf	delay@j+1,w
+   769  0709  3A80               	xorlw	128
+   770  070A  00FF               	movwf	127
+   771  070B  3083               	movlw	131
+   772  070C  027F               	subwf	127,w
+   773  070D  1D03               	skipz
+   774  070E  2F11               	goto	u35
+   775  070F  30E8               	movlw	232
+   776  0710  0274               	subwf	delay@j,w
+   777  0711                     u35:	
+   778  0711  1C03               	skipc
+   779  0712  2F02               	goto	l530
+   780  0713                     l534:	
+   781  0713  30FF               	movlw	255
+   782  0714  07F2               	addwf	delay@i,f
+   783  0715  1803               	skipnc
+   784  0716  0AF3               	incf	delay@i+1,f
+   785  0717  30FF               	movlw	255
+   786  0718  07F3               	addwf	delay@i+1,f
+   787  0719  2EF1               	goto	L1
+   788  071A                     __end_of_delay:	
+   789  007E                     btemp	set	126	;btemp
+   790  007E                     wtemp	set	126
+   791  007E                     wtemp0	set	126
+   792  0080                     wtemp1	set	128
+   793  0082                     wtemp2	set	130
+   794  0084                     wtemp3	set	132
+   795  0086                     wtemp4	set	134
+   796  0088                     wtemp5	set	136
+   797  007F                     wtemp6	set	127
+   798  007E                     ttemp	set	126
+   799  007E                     ttemp0	set	126
+   800  0081                     ttemp1	set	129
+   801  0084                     ttemp2	set	132
+   802  0087                     ttemp3	set	135
+   803  007F                     ttemp4	set	127
+   804  007E                     ltemp	set	126
+   805  007E                     ltemp0	set	126
+   806  0082                     ltemp1	set	130
+   807  0086                     ltemp2	set	134
+   808  0080                     ltemp3	set	128
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14     11      11
+    BANK0            80      0       0
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    _main->_dataCtrl
+    _main->_instructCtrl
+    _initializeLCD->_instructCtrl
+    _instructCtrl->_delay
+    _dataCtrl->_delay
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 4     4      0    1785
+                                              7 COMMON     4     4      0
+                           _dataCtrl
+                              _delay
+                      _initializeLCD
+                       _instructCtrl
+ ---------------------------------------------------------------------------------
+ (1) _initializeLCD                                        0     0      0     681
+                              _delay
+                       _instructCtrl
+ ---------------------------------------------------------------------------------
+ (1) _instructCtrl                                         1     1      0     348
+                                              6 COMMON     1     1      0
+                              _delay
+ ---------------------------------------------------------------------------------
+ (1) _dataCtrl                                             1     1      0     348
+                                              6 COMMON     1     1      0
+                              _delay
+ ---------------------------------------------------------------------------------
+ (2) _delay                                                6     4      2     333
+                                              0 COMMON     6     4      2
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _dataCtrl
+     _delay
+   _delay
+   _initializeLCD
+     _delay
+     _instructCtrl
+       _delay
+   _instructCtrl
+     _delay
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            E      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               E      B       B       1       78.6%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+ABS                  0      0       0       3        0.0%
+BITBANK0            50      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+BANK0               50      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+SFR2                 0      0       0       5        0.0%
+BITBANK1            50      0       0       6        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK3            60      0       0       8        0.0%
+BANK3               60      0       0       9        0.0%
+BITBANK2            60      0       0      10        0.0%
+BANK2               60      0       0      11        0.0%
+DATA                 0      0       0      12        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.33 build 59893 
+Symbol Table                                                                                   Mon Mar 02 08:42:16 2026
+
+            __CFG_CP$OFF 0000                       u25 0700                       u35 0711  
+                    l600 077F                      l530 0702                      l602 0786  
+                    l620 07EF                      l612 07C7                      l534 0713  
+                    l606 078D                      l616 07DB                      l608 07B3  
+                    l580 0739                      l590 075C                      l582 0740  
+                    l574 0729                      l592 0763                      l584 0747  
+                    l594 076A                      l586 074E                      l596 0771  
+                    l588 0755                      l598 0778                      _RB0 0030  
+                    _RB1 0031                      _RB2 0032                      _RD0 0040  
+           __CFG_CPD$OFF 0000             __CFG_FOSC$XT 0000             __CFG_LVP$OFF 0000  
+           __CFG_WRT$OFF 0000                     _main 071A                     btemp 007E  
+          __CFG_BOREN$ON 0000                     ltemp 007E                     start 0000  
+                   ttemp 007E                     wtemp 007E                    ?_main 0070  
+          __CFG_WDTE$OFF 0000                    _PORTC 0007                    _PORTD 0008  
+                  _TRISB 0086                    _TRISC 0087                    _TRISD 0088  
+          __CFG_PWRTE$ON 0000                    _delay 06EB                    ltemp0 007E  
+                  ltemp1 0082                    ltemp2 0086                    ltemp3 0080  
+                  ttemp0 007E                    ttemp1 0081                    ttemp2 0084  
+                  ttemp3 0087                    ttemp4 007F                    status 0003  
+                  wtemp0 007E                    wtemp1 0080                    wtemp2 0082  
+                  wtemp3 0084                    wtemp4 0086                    wtemp5 0088  
+                  wtemp6 007F          __initialization 07FC             __end_of_main 07FC  
+                 ??_main 0077                   ?_delay 0070         __end_of_dataCtrl 06B2  
+                 delay@i 0072                   delay@j 0074   __size_of_initializeLCD 0026  
+__end_of__initialization 07FC           __pcstackCOMMON 0070            __end_of_delay 071A  
+       instructCtrl@inst 0076                  ??_delay 0072            ?_instructCtrl 0070  
+          _initializeLCD 06C5               __pmaintext 071A                ?_dataCtrl 0070  
+         ??_instructCtrl 0076           ?_initializeLCD 0070                  __ptext0 0000  
+                __ptext1 06C5                  __ptext2 06B2                  __ptext3 069F  
+                __ptext4 06EB               ??_dataCtrl 0076                  main@cnt 0079  
+   end_of_initialization 07FC          ??_initializeLCD 0077     __end_of_instructCtrl 06C5  
+    start_initialization 07FC                ___latbits 0002        __size_of_dataCtrl 0013  
+         __size_of_delay 002F          dataCtrl@data_in 0076    __size_of_instructCtrl 0013  
+           _instructCtrl 06B2                 _dataCtrl 069F            __size_of_main 00E2  
+               delay@cnt 0070    __end_of_initializeLCD 06EB                 main@data 0078  
+             _OPTION_REG 0081  
