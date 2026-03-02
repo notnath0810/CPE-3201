@@ -1,0 +1,1 @@
+ PracticalyActivity.d  PracticalyActivity.p1:  Z:/CPE3201-Padas/PracticalActivities/PA1/PracticalyActivity.c
