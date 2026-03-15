@@ -12,11 +12,10 @@ The goal of this repository is to demonstrate:
 
 ## Technologies & Tools
 
-- **Microcontrollers:** Arduino, ATmega-based boards, ESP32
+- **Microcontrollers:** PIC16F877A
 - **Programming Languages:** C / C++
-- **Development Tools:** Arduino IDE, PlatformIO
+- **Development Tools:** MPLAB IDE
 - **Hardware Components:** Sensors, actuators, LEDs, motors, relays, push buttons, resistors, breadboards
-- **Communication Protocols:** UART, I2C, SPI
 
 ## Repository Structure
 
@@ -58,7 +57,7 @@ Through these projects, I developed:
 
 1. Clone the repository:
    git clone https://github.com/your-username/embedded-systems.git
-2. Open the project using Arduino IDE or PlatformIO
+2. Open the project using MPLAB IDE
 3. Connect the required hardware components
 4. Upload the code to the microcontroller
 5. Test and observe system behavior
