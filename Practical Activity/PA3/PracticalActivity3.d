@@ -1,0 +1,1 @@
+ PracticalActivity3.d  PracticalActivity3.p1:  C:/School\ Work/Embedded\ System/LE3/PracticalActivity3.c
